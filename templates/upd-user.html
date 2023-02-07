@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Редактировать пользователя
+{% endblock %}
+
+
+{% block body %}
+<div class="container mt-5">
+    <h2>Редактировать пользователя</h2>
+    <form method="post">
+        <div class="col-sm-6">
+              <label for="name" class="form-label" >Имя:</label>
+              <input type="text" class="form-control"  value="{{ user.name }}" name="name" id="name">
+              <div class="invalid-feedback">  Введите имя: .</div>
+        </div>
+
+        <div class="col-sm-6">
+              <label for="surname" class="form-label">Фамилия: </label>
+              <input type="text" class="form-control" value="{{ user.surname }}" name="surname" id="surname">
+              <div class="invalid-feedback">Введите фамилию.</div>
+        </div>
+
+        <div class="col-md-3">
+              <label for="age" class="form-label">Возраст: </label>
+              <input type="text" class="form-control" value="{{ user.age }}" name="age" id="age" >
+        </div>
+
+        <div class="col-sm-6">
+              <label for="email" class="form-label">Почта:</label>
+              <div class="input-group has-validation">
+                <span class="input-group-text">@</span>
+                <input type="text" class="form-control" value="{{ user.email }}" name="email" id="email" placeholder="you@example.com">
+              <div class="invalid-feedback">Введите почту.</div>
+              </div>
+        </div>
+
+        <div class="col-sm-6">
+              <label for="password" class="form-label">Пароль:</label>
+              <input type="text" class="form-control" value="{{ user.password }}" name="password" id="password">
+            <div class="invalid-feedback">Введите пароль.</div>
+
+        </div>
+
+        <input class="btn btn-secondary" type="submit" value="Обновить"><br>
+
+
+    </form>
+</div>
+
+
+
+{% endblock %}
+

@@ -1,0 +1,62 @@
+{% extends 'index.html' %}
+
+{% block title %}
+Добавление пользователя
+{% endblock %}
+
+{% block body %}
+<script>
+    document.body.classList.add('dark_background');
+</script>
+
+<div class="container mt-5 add_us">
+
+  <div class="modal position-static d-block " role="dialog" id="modalSheet">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content rounded-4 shadow">
+        <div class="modal-header border-bottom-0">
+            <h1 class="modal-title fs-5">Добавить студента</h1>
+            <a href="/users" class=" close">&times;</a>
+        </div>
+      <form class="modal-body py-0" action="/add-user" method="post">
+
+                <div class="col-sm-6">
+                    <label for="name" class="form-label">Имя:</label>
+                    <input type="text" class="form-control"  name="name" id="name">
+                    <div class="invalid-feedback">  Введите имя: .</div>
+                </div>
+
+                <div class="col-sm-6">
+                    <label for="surname" class="form-label">Фамилия: </label>
+                    <input type="text" class="form-control"  name="surname" id="surname">
+                    <div class="invalid-feedback">Введите фамилию.</div>
+                </div>
+
+                 <div class="col-md-3">
+                    <label for="age" class="form-label">Возраст: </label>
+                    <input type="text" class="form-control" name="age" id="age" >
+                </div>
+
+                 <div class="col-sm-6">
+                    <label for="email" class="form-label">Почта:</label>
+                    <div class="input-group has-validation" >
+                    <span class="input-group-text">@</span>
+                    <input type="text" class="form-control" name="email" id="email" placeholder="you@example.com">
+                    <div class="invalid-feedback">Введите почту.</div>
+                 </div></div>
+
+                <div class="col-sm-6">
+                    <label for="password" class="form-label">Пароль:</label>
+                    <input type="text" class="form-control" name="password" id="password">
+                    <div class="invalid-feedback">Введите пароль.</div>
+                </div>
+
+                <input type="submit" class="btn btn-success" style="margin:3%" value="Добавить" >
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+
+

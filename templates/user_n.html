@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <div class="container mt-5">
+        <p> ID: {{ user.id  }}</p>
+        <p> Пользователь: {{ user.name }} {{ user.surname }} </p>
+        <p> Возраст: {{ user.age  }} лет</p>
+        <p> Почта: {{ user.email  }}</p>
+        <p> Пароль: {{ user.password }}</p>
+
+
+        <a class="btn btn-secondary" href="/upd-user/{{ user.id }}">Редактировать</a>
+        <a class="btn btn-secondary" href="/del-user/{{ user.id }}">Удалить</a>
+    </div>
+{% endblock %}
